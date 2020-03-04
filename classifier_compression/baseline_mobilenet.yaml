@@ -1,0 +1,17 @@
+#This schedule performs the baseline trainning for mobilenet_cifar10
+#
+
+version: 1
+lr_schedulers:
+  #learning rate decay scheduler
+  baseline_lr:
+    class: MultiStepLR
+    milestones: [30, 80]
+    gamma: 0.33
+
+policies:
+  - lr_scheduler:
+      instance_name: baseline_lr
+    starting_epoch: 0
+    ending_epoch: 150
+    frequency: 1

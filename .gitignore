@@ -1,0 +1,10 @@
+Results/
+logs/* 
+classifier_compression/logs/*
+*.tar
+events.*
+__pycache__/*
+/utils/__pycache__/*
+.mypy_cache/*
+.vscode/*
+*.pyc
