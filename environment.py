@@ -378,6 +378,7 @@ class Environment(gym.Env):
         self.episode = 0
         self.generation += 1
 
+
     def run_test(self):
         """Run the final test on test set"""
         self.net_wrapper.reset(self.best_model_val_2)
