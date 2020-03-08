@@ -8,3 +8,6 @@ __pycache__/*
 .mypy_cache/*
 .vscode/*
 *.pyc
+latest_log_dir/
+latest_log_file/
+

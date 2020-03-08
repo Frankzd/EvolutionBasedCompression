@@ -66,6 +66,9 @@ class NetworkWrapper(object):
 
     def layer_macs(self, layer):
         return self.model_metadata.layer_macs(layer)
+    
+    def layer_params(self, layer):
+        return self.model_metadata.layer_params(layer)
 
     def layer_net_macs(self, layer):
         return self.model_metadata.layer_net_macs(layer)
@@ -403,6 +406,10 @@ class NetworkMetadata(object):
         for dependent_mod in layer.dependencies:
             macs += self.name2layer(dependent_mod).macs
         return macs
+
+    def layer_params(self,layer):
+        """Returns a param-num of a specific layer"""
+        return layer.weights_vol
 
     def reduce_layer_macs(self, layer, reduction, prune_what):
         total_macs_reduced = layer.macs * reduction
